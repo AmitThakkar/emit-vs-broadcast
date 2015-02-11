@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="emitVSbroadcastApp">
+<head>
+    <title>Providers Test</title>
+    <!-- Require AngularJS -->
+    <script type="application/javascript" src="./js/angular.min.js"></script>
+    <!-- Require providers-test JS -->
+    <script type="application/javascript" src="./js/emitVSbroadcast.js"></script>
+</head>
+<body>
+<div ng-controller="AParentController">
+    <div ng-controller="AController">
+        <button ng-click="emitEvent()">Emit Event</button>
+        <div ng-controller="AChildController">
+            <div isolated-scope-directive2></div>
+        </div>
+    </div>
+    <div ng-controller="BController">
+    </div>
+</div>
+<div isolated-scope-directive></div>
+</body>
+</html>
