@@ -125,3 +125,9 @@ Lets see a demo:
     });
 }(angular));
 ```
+
+> You might be thinking that isolated scope directives get inherited by $rootScope only so if we broadcast any message with any other scope(which is not $rootScope and not that isolated scope) then those listeners will not called which are registered with isolated scope. Then you are wrong! You are missing my one statement:
+
+**When we broadcast a message then all the listeners/subscribers will be called which are register on those scope which are applied on child element/node in DOM and on that scope which is used to broadcast the message.**
+
+So its depends where **isolate scope** directive has market.
