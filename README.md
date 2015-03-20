@@ -130,20 +130,23 @@ Lets see a demo:
 
 **When we broadcast a message then all the listeners/subscribers will be called which are register on those scope which are applied on child element/node in DOM and on that scope which is used to broadcast the message.**
 
-So if isolated scope directive is marked on child element/node of that scope then listeners of isolated scope will be call.
+So if isolated scope directive is marked on child element/node of that **scope** then **listeners** of **isolated scope** will be call.
 
 **How to run this Demo ??** You can clone this working demo from [Github link](https://github.com/AmitThakkar/emit-vs-broadcast). And then open **emit-vs-broadcast.html** into your favourite browser.
 
-You will notice we have 7 scope here:
+You will notice we have 7 scope here as show in diagram:
 
 ![DOMScope](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/DOMScope.png)
 
+Few Things:
 1. If we **broadcast** any message with **$rootScope**, then all the **subscribers/listeners** will be called because all the HTML node are directly or indirectly child of ```ng-app``` node.
 2. If we **emit** any message with **$$rootScope**, then only those **subscribers/listeners** will be called which are registered with **$rootScope** because there is no parent **AngularJS** node.
 3. If we **broadcast** any message with **A Controller Scope**, then only those **subscribers/listeners** will be called which are registered with **A Controller Scope**, **A Child Controller Scope** and **isolated Scope directive 2**. Because **A Child Controller Scope** and **isolated Scope directive 2** are child node of **A Controller Scope**.  
 
-Now click on button ![Test Event](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/button.png), you will see output:
+Now click on button ![Test Event](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/button.png) in the browser, you will see output:
 
 ![Output](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/output.png)
 
+In output you will notice when we are **broadcast**ing a message with **$rootScope** then all the registered **subscribers/listeners** are getting called and when we **emitting** a message with **$rootScope**, then no **subscriber/listener** is getting called because there is no **subscriber/listeners** registered with **$rootScope**.
 
+> Best Practice: Register subscribers/listeners on $rootScope and emit message with $rootScope only so AngularJS does not have to scatting DOM tree to find all the listeners.
