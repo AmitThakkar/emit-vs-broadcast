@@ -142,7 +142,7 @@ You will notice we have 7 scope here:
 2. If we **emit** any message with **$$rootScope**, then only those **subscribers/listeners** will be called which are registered with **$rootScope** because there is no parent **AngularJS** node.
 3. If we **broadcast** any message with **A Controller Scope**, then only those **subscribers/listeners** will be called which are registered with **A Controller Scope**, **A Child Controller Scope** and **isolated Scope directive 2**. Because **A Child Controller Scope** and **isolated Scope directive 2** are child node of **A Controller Scope**.  
 
-You will see button ![Test Event](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/button.png). Click on that button, you will see output:
+Now click on button ![Test Event](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/button.png), you will see output:
 
 ![Output](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/output.png)
 
