@@ -147,6 +147,6 @@ Now click on button ![Test Event](https://raw.githubusercontent.com/AmitThakkar/
 
 ![Output](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/output.png)
 
-In output you will notice when we are **broadcast**ing a message with **$rootScope** then all the registered **subscribers/listeners** are getting called and when we **emitting** a message with **$rootScope**, then no **subscriber/listener** is getting called because there is no **subscriber/listeners** registered with **$rootScope**.
+In the output, you will notice that, when we are **broadcast**ing a message with **$rootScope** then all the registered **subscribers/listeners** are getting called and when we are **emitting** a message with **$rootScope**, then no **subscriber/listener** is getting called because there is no **subscriber/listeners** registered with **$rootScope**.
 
-> Best Practice: Register subscribers/listeners on $rootScope and emit message with $rootScope only so AngularJS does not have to scatting DOM tree to find all the listeners.
+> Best Practice: Register subscribers/listeners with $rootScope and emit messages with $rootScope only so AngularJS does not have to travelers complete DOM tree to find all the listeners.
