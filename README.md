@@ -134,8 +134,8 @@ So if isolated scope directive is marked on child element/node of that scope the
 
 How to run this Demo: You can clone this working demo from [Github link](https://github.com/AmitThakkar/emit-vs-broadcast). And then open **emit-vs-broadcast.html** into your favourite browser.
 
-You will see button ![Test Event](https://github.com/AmitThakkar/emit-vs-broadcast/tree/master/images/button.png). Click on that button, you will see output:
+You will see button ![Test Event](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/button.png). Click on that button, you will see output:
 
-![Output](https://github.com/AmitThakkar/emit-vs-broadcast/tree/master/images/output.png)
+![Output](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/output.png)
 
 
