@@ -132,7 +132,15 @@ Lets see a demo:
 
 So if isolated scope directive is marked on child element/node of that scope then listeners of isolated scope will be call.
 
-How to run this Demo: You can clone this working demo from [Github link](https://github.com/AmitThakkar/emit-vs-broadcast). And then open **emit-vs-broadcast.html** into your favourite browser.
+**How to run this Demo ??** You can clone this working demo from [Github link](https://github.com/AmitThakkar/emit-vs-broadcast). And then open **emit-vs-broadcast.html** into your favourite browser.
+
+You will notice we have 7 scope here:
+
+![DOMScope](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/DOMScope.png)
+
+1. If we **broadcast** any message with **$rootScope**, then all the **subscribers/listeners** will be called because all the HTML node are directly or indirectly child of ```ng-app``` node.
+2. If we **emit** any message with **$$rootScope**, then only those **subscribers/listeners** will be called which are registered with **$rootScope** because there is no parent **AngularJS** node.
+3. If we **broadcast** any message with **A Controller Scope**, then only those **subscribers/listeners** will be called which are registered with **A Controller Scope**, **A Child Controller Scope** and **isolated Scope directive 2**. Because **A Child Controller Scope** and **isolated Scope directive 2** are child node of **A Controller Scope**.  
 
 You will see button ![Test Event](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/button.png). Click on that button, you will see output:
 

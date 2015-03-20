@@ -3,9 +3,9 @@
  */
 (function (ng) {
     var emitVSbroadcastApp = ng.module("emitVSbroadcastApp", []);
-    emitVSbroadcastApp.controller("AParentController", function ($scope) {
+    emitVSbroadcastApp.controller("ParentController", function ($scope) {
         $scope.$on('EventFromAController', function (event, data) {
-            console.log(data, "In AParentController");
+            console.log(data, "In ParentController");
         });
     });
     emitVSbroadcastApp.controller("AController", function ($scope, $rootScope) {
