@@ -53,7 +53,7 @@ Lets see a demo:
 <body>
 <div ng-controller="AParentController">
     <div ng-controller="AController">
-        <button ng-click="emitEvent()">Emit Event</button>
+        <button ng-click="testEvent()">Event Test</button>
         <div ng-controller="AChildController">
             <div isolated-scope-directive2></div>
         </div>
@@ -69,7 +69,7 @@ Lets see a demo:
 **emitVSbroadcast.js**
 ```JavaScript
 /**
- * Created by amit on 11/02/15.
+ * Created by Amit Thakkar on 11/02/15.
  */
 (function (ng) {
     var emitVSbroadcastApp = ng.module("emitVSbroadcastApp", []);
@@ -79,7 +79,7 @@ Lets see a demo:
         });
     });
     emitVSbroadcastApp.controller("AController", function ($scope, $rootScope) {
-        $scope.emitEvent = function () {
+        $scope.testEvent = function () {
             console.log("$scope.$emit result:");
             $scope.$emit('EventFromAController', "EmitEventFromAController with $scope.$emit");
             console.log("\n\n\n$scope.$broadcast result:");
@@ -131,3 +131,11 @@ Lets see a demo:
 **When we broadcast a message then all the listeners/subscribers will be called which are register on those scope which are applied on child element/node in DOM and on that scope which is used to broadcast the message.**
 
 So if isolated scope directive is marked on child element/node of that scope then listeners of isolated scope will be call.
+
+How to run this Demo: You can clone this working demo from [Github link](https://github.com/AmitThakkar/emit-vs-broadcast). And then open **emit-vs-broadcast.html** into your favourite browser.
+
+You will see button ![Test Event](https://github.com/AmitThakkar/emit-vs-broadcast/tree/master/images/button.png). Click on that button, you will see output:
+
+![Output](https://github.com/AmitThakkar/emit-vs-broadcast/tree/master/images/output.png)
+
+

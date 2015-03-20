@@ -1,5 +1,5 @@
 /**
- * Created by amit on 11/02/15.
+ * Created by Amit Thakkar on 11/02/15.
  */
 (function (ng) {
     var emitVSbroadcastApp = ng.module("emitVSbroadcastApp", []);
@@ -9,7 +9,7 @@
         });
     });
     emitVSbroadcastApp.controller("AController", function ($scope, $rootScope) {
-        $scope.emitEvent = function () {
+        $scope.testEvent = function () {
             console.log("$scope.$emit result:");
             $scope.$emit('EventFromAController', "EmitEventFromAController with $scope.$emit");
             console.log("\n\n\n$scope.$broadcast result:");
