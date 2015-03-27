@@ -139,7 +139,7 @@ You will notice we have 7 scope as shown here in diagram:
 ![DOMScope](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/DOMScope.png)
 
 Few Things:
-1. If we **broadcast** any message with **$rootScope**, then all the **subscribers/listeners** will be called because all the HTML nodes are directly or indirectly child of ```ng-app``` node.
+1. If we **broadcast** any message with **$rootScope**, then all the **subscribers/listeners** will be called because all the HTML nodes are directly or indirectly children of ```ng-app``` node.
 2. If we **emit** any message with **$$rootScope**, then only those **subscribers/listeners** will be called which are registered with **$rootScope** because there is no parent **AngularJS** node.
 3. If we **broadcast** any message with **Controller Scope**, then only those **subscribers/listeners** will be called which are registered with **Controller Scope**, **Child Controller Scope** and **isolated Scope directive**. Because **Child Controller Scope** and **isolated Scope directive** are child node of **Controller Scope**.
 
