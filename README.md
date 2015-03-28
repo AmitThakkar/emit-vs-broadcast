@@ -10,13 +10,13 @@ As we are adding the value in **$rootScope** so it will be accessible from whole
 
 We have one more option to store the common data in **AngularJS**, that is [**Factory**, **Service**](http://codechutney.in/blog/angularjs/providers-in-angularjs/). But if any of the **controller/component** updates any value, others will not get know that value has changed.
 
-That time we use ```pub/sub``` pattern. **AngularJS** provides **$on, $emit/$broadcast** api methods for that. We can register **subscribers** with **$on** api **function** and publisher can **publish** messages with **$emit/$broadcast** api **function**.
+To counter this situation, **AngularJS** provides **$on, $emit/$broadcast** api methods to use ```pub/sub``` pattern. We can register **subscribers** with **$on** api **function** and publisher can **publish** messages with **$emit/$broadcast** api **function**.
 
 > Now you would be thinking, why there are 2 api functions for publishing the message? $emit and $broadcast ?
 
-**$emit**: When we **emit** a message then all the listeners/subscribes will be called which are registered on those **scope** which are applied on parent element/node in DOM and on that **scope** which is used to **emit** the message.
+**$emit**: When we **emit** a message then all the listeners/subscribes will be called which are registered on that **scope** which is applied on parent element/node in DOM and on that **scope** which is used to **emit** the message.
 
-**$broadcast**: When we **broadcast** a message then all the listeners/subscribers will be called which are registered on those **scope** which are applied on child element/node in DOM and on that **scope** which is used to **broadcast** the message.
+**$broadcast**: When we **broadcast** a message then all the listeners/subscribers will be called which are registered on that **scope** which is applied on child element/node in DOM and on that **scope** which is used to **broadcast** the message.
 
 Enough for theory, lets see how to bind listeners and how to **broadcast/emit** messages:
 
@@ -128,7 +128,7 @@ Lets see a demo:
 
 > You might be thinking that isolated scope directives get inherited by $rootScope only so if we broadcast a message with any other scope(which is not $rootScope and not that isolated scope) then those listeners will not called which are registered with isolated scope. Then you are wrong! You are missing a key point of this blog:
 
-**When we broadcast a message then all the listeners/subscribers will be called which are registered on those scope which are applied on child element/node in DOM and on that scope which is used to broadcast the message.**
+**When we broadcast a message then all the listeners/subscribers will be called which are registered on that scope which is applied on child element/node in DOM and on that scope which is used to broadcast the message.**
 
 So if isolated scope directive is marked on child element/node of that **scope** then **listeners** of **isolated scope** will be called.
 
@@ -139,7 +139,7 @@ You will notice we have 7 scope as shown here in diagram:
 ![DOMScope](https://raw.githubusercontent.com/AmitThakkar/emit-vs-broadcast/master/images/DOMScope.png)
 
 Few Things:
-1. If we **broadcast** any message with **$rootScope**, then all the **subscribers/listeners** will be called because all the HTML nodes are directly or indirectly child of ```ng-app``` node.
+1. If we **broadcast** any message with **$rootScope**, then all the **subscribers/listeners** will be called because all the HTML nodes are directly or indirectly children of ```ng-app``` node.
 2. If we **emit** any message with **$$rootScope**, then only those **subscribers/listeners** will be called which are registered with **$rootScope** because there is no parent **AngularJS** node.
 3. If we **broadcast** any message with **Controller Scope**, then only those **subscribers/listeners** will be called which are registered with **Controller Scope**, **Child Controller Scope** and **isolated Scope directive**. Because **Child Controller Scope** and **isolated Scope directive** are child node of **Controller Scope**.
 
