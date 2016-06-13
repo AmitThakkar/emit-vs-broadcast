@@ -1,4 +1,4 @@
-# emit vs broadcast
+# Emit vs Broadcast
 
 This repository is for exploring **$emit** and **$broadcast** in **AngularJS**.
 
@@ -151,3 +151,13 @@ Now click on button ![Test Event](https://raw.githubusercontent.com/AmitThakkar/
 In the output, you will notice that, when we are **broadcast**ing a message with **$rootScope** then all the registered **subscribers/listeners** are getting called and when we are **emitting** a message with **$rootScope**, then no **subscriber/listener** is getting called because there are no **subscriber/listeners** registered with **$rootScope**.
 
 > Best Practice: Register subscribers/listeners with $rootScope and emit messages with $rootScope only so AngularJS does not have to traverse complete DOM tree to find all the listeners.
+
+Follow Me
+---
+[Github](https://github.com/AmitThakkar)
+
+[Twitter](https://twitter.com/amit_thakkar01)
+
+[LinkedIn](https://in.linkedin.com/in/amitthakkar01)
+
+[More Blogs By Me](http://amitthakkar.github.io/)
