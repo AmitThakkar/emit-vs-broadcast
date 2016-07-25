@@ -8,7 +8,7 @@ Now suppose, we want to access a value in multiple **controllers**, so to make t
 
 As we are adding the value in **$rootScope** so it will be accessible from whole **AngularJS** application which might be not good approach. Well, then where can we store data which is common among multiple controllers?
 
-We have one more option to store the common data in **AngularJS**, that is [**Factory**, **Service**](http://codechutney.in/blog/angularjs/providers-in-angularjs/). But if any of the **controller/component** updates any value, others will not get know that value has changed.
+We have one more option to store the common data in **AngularJS**, that is [**Factory**, **Service**](https://amitthakkar.github.io/Providers-In-AngularJS/). But if any of the **controller/component** updates any value, others will not get know that value has changed.
 
 To counter this situation, **AngularJS** provides **$on, $emit/$broadcast** api methods to use ```pub/sub``` pattern. We can register **subscribers** with **$on** api **function** and publisher can **publish** messages with **$emit/$broadcast** api **function**.
 
